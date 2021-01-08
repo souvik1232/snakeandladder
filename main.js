@@ -1,4 +1,5 @@
 console.log("Welcome to Snake and Ladder");
 const snakeLadder = require('./utility');
-snakeLadder.assignPosition();
-rollsnakeLadder.diceRoll();
+// snakeLadder.assignPosition();
+const roll = snakeLadder.diceRoll();
+snakeLadder.option(snakeLadder.assignPosition());
