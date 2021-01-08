@@ -8,24 +8,33 @@ class SnakeLadder {
         return diceRoll;
     }
     option = (position)=>{
-        let random = (Math.floor(Math.random() * 3));
+        do {
+            let roll =this.diceRoll();
+            let random = (Math.floor(Math.random() * 3));
         switch (random) {
             case 0:
                 console.log("No Play");
                 break;
             case 1:
-                console.log("Ladder");
-                position=position+this.diceRoll();
+                console.log("Ladder");;
+                position=position+roll;
                 console.log(position);
                 break;
             case 2:
                 console.log("Snake");
-                position=position-this.diceRoll();
+                position=position-roll;
                 console.log(position);
                 break;      
             default:
                 break;
         }
+            if (position<0) {
+                position = 0;
+            }
+            if (position >100) {
+                position = position - roll;   
+            }
+        }while (position < 100);
     }  
 }
 module.exports = new SnakeLadder();
