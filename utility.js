@@ -8,7 +8,9 @@ class SnakeLadder {
         return diceRoll;
     }
     option = (position)=>{
+        let count = 0;
         do {
+            count++;
             let roll =this.diceRoll();
             let random = (Math.floor(Math.random() * 3));
         switch (random) {
@@ -35,6 +37,7 @@ class SnakeLadder {
                 position = position - roll;   
             }
         }while (position < 100);
+        console.log("Dice rolled->",count);
     }  
 }
 module.exports = new SnakeLadder();
